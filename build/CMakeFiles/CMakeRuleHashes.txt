@@ -1,0 +1,2 @@
+# Hashes of file build rules.
+5cfc2970080542311a3c185828bec11e DeviceMessage.pb.cc

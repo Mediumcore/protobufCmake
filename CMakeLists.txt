@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 2.8)
+
+project(ProtoBuf)
+# include_directories(${Protobuf_INCLUDE_DIRS})
+# include_directories(${CMAKE_CURRENT_SOURCE_DIR})
+# add_executable(${PROJECT_NAME} "main.cpp"  "DeviceMessage.pb.cc")
+# target_link_libraries(${PROJECT_NAME} protobuf  ${Protobuf_LIBRARIES})
+find_package(Protobuf REQUIRED)
+include_directories(${Protobuf_INCLUDE_DIRS})
+include_directories(${CMAKE_CURRENT_BINARY_DIR})
+include_directories(${CMAKE_CURRENT_SOURCE_DIR})
+protobuf_generate_cpp(PROTO_SRCS PROTO_HDRS DeviceMessage.proto)
+# protobuf_generate_python(PROTO_PY foo.proto)
+add_executable(${PROJECT_NAME} "main.cpp" ${PROTO_SRCS} ${PROTO_HDRS})
+target_link_libraries(${PROJECT_NAME} ${Protobuf_LIBRARIES})
+

@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/ProtoBuf.dir/main.cpp.o CMakeFiles/ProtoBuf.dir/DeviceMessage.pb.cc.o  -o ProtoBuf -Wl,-rpath,/usr/local/lib /usr/local/lib/libprotobuf.so -lpthread 
